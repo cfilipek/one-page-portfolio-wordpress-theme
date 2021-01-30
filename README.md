@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# One Page Portfolio Wordpress Theme
+
+Created using Underscores starter template:
 
 _s
 ===
