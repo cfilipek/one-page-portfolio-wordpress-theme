@@ -238,3 +238,20 @@ add_action( 'wp_enqueue_scripts', 'tthq_add_custom_fa_css' );
 function tthq_add_custom_fa_css() {
 wp_enqueue_style( 'custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' );
 }
+
+// Register Custom Post Type
+function add_contact_form() {
+
+	$labels = array(
+		'name'                  => _x( 'Contacts', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Contact', 'Post Type Singular Name', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array( 'category' ),
+		'public'                => true,
+	);
+	register_post_type( 'contact', $args );
+
+}
+add_action( 'init', 'add_contact_form', 0 );

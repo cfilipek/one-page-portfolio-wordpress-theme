@@ -15,6 +15,7 @@
 get_header();
 ?>
 
+<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-circle-up"></i></a>
 
 <main id="primary" class="site-main">
 
@@ -135,21 +136,15 @@ get_header();
 		</div>
 	</div>
 
-	<!-- <div class="projects code" id="projects">
-		<div class="projects-grid">
-			<h2 class="about-title"><span class="accent">Dev</span> Projects</h2>
-			<?php query_posts( 'post_type=project_dev&posts_per_page=20' ) ?>
-			<?php if (have_posts(  )) : while(have_posts(  )): the_post(  ); ?>
-				<div>
-					<h2 class="project-title"><?php the_title();?></h2>
-					<?php the_content( ); ?>
-				</div>
-			<?php
-			endwhile;
-			endif;
-			?>
-		</div>
-	</div> -->
+	<?php query_posts( 'post_type=contact&posts_per_page=1' ) ?>
+	<?php if (have_posts(  )) : while(have_posts(  )): the_post(  ); ?>
+			<div id="contact" class="contact-wrapper">
+				<?php the_content( ); ?>
+			</div>
+	<?php
+				endwhile;
+				endif;
+				?>
 
 </main><!-- #main -->
 

@@ -139,3 +139,39 @@ button.addEventListener("click", function() {
 	}
 });
 
+const arrow = document.getElementById('return-to-top')
+
+
+window.addEventListener("scroll", function() {
+	const elementTarget = document.getElementById("about");
+	if (window.scrollY > (elementTarget.offsetTop)) {
+		arrow.style.display = 'block';
+	} else {
+		arrow.style.display = 'none'
+	}
+  });
+
+  arrow.addEventListener("click", function() {
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	  });
+});
+
+const links = document.querySelectorAll(".menu li a");
+ 
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+ 
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+ 
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
